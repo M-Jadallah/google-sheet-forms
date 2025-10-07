@@ -22,6 +22,7 @@ function doGet(e) {
     // البيانات من الأوراق المختلفة
     const groupsSheet = sheet.getSheetByName("المجموعات") || sheet.getSheets()[0];
     const planTypesSheet = sheet.getSheetByName("أنواع الخطط") || sheet.getSheets()[1];
+    const recipientsSheet = sheet.getSheetByName("المستلمون");
     
     // قراءة المجموعات (من العمود الأول، تجاهل السطر الأول "العنوان")
     const groupsData = groupsSheet.getRange("A2:A" + groupsSheet.getLastRow()).getValues();
@@ -50,11 +51,21 @@ function doGet(e) {
       }
     });
     
+    // قراءة أسماء المستلمين
+    let recipients = [];
+    if (recipientsSheet) {
+      const recipientsData = recipientsSheet.getRange("A2:A" + recipientsSheet.getLastRow()).getValues();
+      recipients = recipientsData
+        .map(row => row[0])
+        .filter(val => val !== "");
+    }
+    
     // إرجاع البيانات بصيغة JSON
     const response = {
       success: true,
       groups: groups,
       planTypes: planTypes,
+      recipients: recipients,
       days: ["السبت", "الأحد", "الاثنين", "الثلاثاء", "الأربعاء", "الخميس", "الجمعة"]
     };
     
@@ -89,4 +100,11 @@ function doGet(e) {
  * | خطة أ     | عنصر 2     |
  * | خطة ب     | عنصر 1     |
  * | خطة ب     | عنصر 3     |
+ * 
+ * Sheet 3: "المستلمون"
+ * | الاسم     |
+ * |-----------|
+ * | محمد أحمد |
+ * | سارة علي  |
+ * | خالد محمود|
  */
