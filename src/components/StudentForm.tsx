@@ -7,7 +7,7 @@ import { useToast } from "@/hooks/use-toast";
 import { Send } from "lucide-react";
 
 // رابط Google Apps Script - ضع رابط الـ Web App الخاص بك هنا
-const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwe1sABQ8QAjxiPFH9ydaVVLg3ztMTQU7nGUA01qmEcb5uQ8fn4JXH9POgfkBqkX9cL/exec";
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzQxv2Hf2Rrpl9DH4BTdR3ADDUW4ttMlgcm6zYnLt59PF1oPC3NIz74BlsJfguMgmUWJw/exec";
 
 // رابط n8n Webhook - ضع رابط الـ webhook الخاص بك هنا
 const N8N_WEBHOOK_URL = "https://n8n.jadallah.work/webhook-test/training-plan";
