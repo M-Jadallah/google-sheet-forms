@@ -7,10 +7,10 @@ import { useToast } from "@/hooks/use-toast";
 import { Send } from "lucide-react";
 
 // رابط Google Apps Script - ضع رابط الـ Web App الخاص بك هنا
-const GOOGLE_SCRIPT_URL = "YOUR_GOOGLE_APPS_SCRIPT_URL_HERE";
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwe1sABQ8QAjxiPFH9ydaVVLg3ztMTQU7nGUA01qmEcb5uQ8fn4JXH9POgfkBqkX9cL/exec";
 
 // رابط n8n Webhook - ضع رابط الـ webhook الخاص بك هنا
-const N8N_WEBHOOK_URL = "YOUR_N8N_WEBHOOK_URL_HERE";
+const N8N_WEBHOOK_URL = "https://n8n.jadallah.work/webhook-test/training-plan";
 
 interface FormData {
   studentName: string;
